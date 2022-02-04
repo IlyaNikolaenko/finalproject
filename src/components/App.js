@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import '../style/App.css';
+import React, {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {Routes, Route} from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {MainPage} from "../pages/ main";
+import{Schedule} from "../pages/schedule";
+import {BaseLayout} from "./Layout";
+import {getMovies} from "../actions/movies";
+
+const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getMovies());
+    },[dispatch])
+
+    return (
+       <Routes>
+           <Route path='/' element={<BaseLayout />}>
+               <Route index element={<MainPage />}/>
+               <Route path="schedule" element={<Schedule />}/>
+           </Route>
+       </Routes>
+    );
 }
 
 export default App;
