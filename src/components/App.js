@@ -6,6 +6,7 @@ import {MainPage} from "../pages/ main";
 import{Schedule} from "../pages/schedule";
 import {BaseLayout} from "./Layout";
 import {getMovies} from "../actions/movies";
+import {MoviePage} from "../pages/movie";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const App = () => {
            <Route path='/' element={<BaseLayout />}>
                <Route index element={<MainPage />}/>
                <Route path="schedule" element={<Schedule />}/>
+               <Route path="movie/:id" element={<MoviePage />} />
            </Route>
        </Routes>
     );
