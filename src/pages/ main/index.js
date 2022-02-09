@@ -22,7 +22,7 @@ export const MainPage = () => {
         }, []);
     }, [movies])
 
-    const filtereMovies = useMemo(() => {
+    const filteredMovies = useMemo(() => {
         if (filterTitle && !filterGenre){
             return movies.filter((item) => item.title.toLowerCase().includes(filterTitle.toLowerCase()));
         } else if (filterGenre && !filterTitle) {
@@ -50,7 +50,7 @@ export const MainPage = () => {
                     </Select>
                 </div>
                 <div className="movie-list">
-                    {filtereMovies.map((item) => (
+                    {filteredMovies.map((item) => (
                         <Link key={item.id} to={`movie/${item.id}`}>
                             <img src={item.poster} alt=''/>
                             <div className="movie-title">{item.title}</div>

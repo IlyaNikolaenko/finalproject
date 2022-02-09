@@ -1,24 +1,23 @@
 import React from "react";
-import {Menu, Layout} from "antd";
-import {Link} from "react-router-dom";
-import {UserOutlined, VideoCameraOutlined} from "@ant-design/icons";
+import {Layout } from "antd";
+import { UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import {NavLink} from "react-router-dom";
 
-export const Sidebar = ({collapsed}) => {
+export const Sidebar = ({ collapsed }) => {
+
     return (
         <Layout.Sider trigger={null} collapsible collapsed={collapsed}>
             <div className="logo" />
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                <Menu.Item key="1" icon={<UserOutlined />}>
-                    <Link to="/">
-                        MainPage
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-                    <Link to="/schedule">
-                        Schedule
-                    </Link>
-                </Menu.Item>
-            </Menu>
+            <nav>
+                <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
+                    <UserOutlined />
+                    Home page
+                </NavLink>
+                <NavLink to="/schedule" className={({ isActive }) => isActive ? "active" : ""}>
+                    <VideoCameraOutlined />
+                    Schedule
+                </NavLink>
+            </nav>
         </Layout.Sider>
-    )
+    );
 }

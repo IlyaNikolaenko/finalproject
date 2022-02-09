@@ -9,8 +9,8 @@ export const MoviePage = () => {
     const {id} = useParams();
     const movies = useSelector((state) => state.movies);
 
-    const movie = useMemo(() => movies.find((item) => item.id === +id), [id, movies])
-    console.log(movie)
+    const movie = useMemo(() => movies.find((item) => item.id === +id), [id, movies]);
+
     return(
         <Spinner>
             <div className="movie-page">

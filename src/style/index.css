@@ -56,6 +56,30 @@ code {
   min-height: 100vh;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  padding: 15px 15px 10px 25px;
+  color: #abd7f8;
+}
+
+nav a:hover {
+  background: #487ba0;
+  color: white;
+}
+
+.active {
+  background: #0c5c95;
+}
+
+nav a span {
+  margin-right: 15px;
+}
+
+
 .movie-list {
   display: flex;
   flex-wrap: wrap;
@@ -166,4 +190,66 @@ img {
 .btn-buy:hover {
   background: #ff9b14;
   border-color: #ed981f;
+}
+
+.day {
+  background: #daf3ff;
+  border: 2px solid #b0daff;
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sessions {
+  margin-top: 15px;
+}
+
+.session {
+  border: 2px solid #eee;
+  border-radius: 2px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 220px;
+  margin-bottom: 15px;
+  background: white;
+}
+
+.session > div {
+  width: 25%;
+}
+
+.session > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.session > div:first-child {
+  display: flex;
+  width: 0;
+  text-align: left;
+}
+
+.session > div:first-child img {
+  width: 25vh;
+  margin-right: 10px;
+}
+
+.time {
+  background: #fbba5e;
+  border: 2px solid #ffa81c;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.room {
+  border: 2px solid #b0daff;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80px;
+  text-align: center;
 }

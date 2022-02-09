@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {Routes, Route} from "react-router-dom"
 
 import {MainPage} from "../pages/ main";
-import{Schedule} from "../pages/schedule";
+import{SchedulePage} from "../pages/schedule";
 import {BaseLayout} from "./Layout";
 import {getMovies} from "../actions/movies";
 import {MoviePage} from "../pages/movie";
@@ -19,7 +19,7 @@ const App = () => {
        <Routes>
            <Route path='/' element={<BaseLayout />}>
                <Route index element={<MainPage />}/>
-               <Route path="schedule" element={<Schedule />}/>
+               <Route path="schedule" element={<SchedulePage />}/>
                <Route path="movie/:id" element={<MoviePage />} />
            </Route>
        </Routes>
